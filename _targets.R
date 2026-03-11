@@ -68,8 +68,8 @@ list(
   tar_target(csv_files, zip::unzip(zipdata)),
 
   tar_target(
-    name = claims, #name to reference what you create 
-    command = read.csv("data-fixed/claims.csv") #can call a function 
+    name = allergies, #name to reference what you create 
+    command = read.csv("data-fixed/allergies.csv") #can call a function 
     # format = "qs" # Efficient storage for general data objects.
   ),
   tar_target(
@@ -78,11 +78,11 @@ list(
     # format = "qs" # Efficient storage for general data objects.
   ),
   tar_target(
-    name = patients, #name to reference what you create 
-    command = read.csv("data-fixed/patients.csv") #can call a function 
+    name = combined_data, #name to reference what you create 
+    dplyr::left_join(patients,claim, by="Id")) #can call a function 
     # format = "qs" # Efficient storage for general data objects.
   )
-)
+
 
 
 #tar_make()
