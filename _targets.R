@@ -68,16 +68,23 @@ list(
   tar_target(csv_files, zip::unzip(zipdata)),
 
   tar_target(
-    name = data, #name to reference what you create 
-    command = tibble(x = rnorm(100), y = rnorm(100)) #can call a function 
+    name = claims, #name to reference what you create 
+    command = read.csv("data-fixed/claims.csv") #can call a function 
     # format = "qs" # Efficient storage for general data objects.
   ),
   tar_target(
-    name = model,
-    command = coefficients(lm(y ~ x, data = data))
+    name = patients, #name to reference what you create 
+    command = read.csv("data-fixed/patients.csv") #can call a function 
+    # format = "qs" # Efficient storage for general data objects.
+  ),
+  tar_target(
+    name = patients, #name to reference what you create 
+    command = read.csv("data-fixed/patients.csv") #can call a function 
+    # format = "qs" # Efficient storage for general data objects.
   )
 )
 
 
 #tar_make()
 #Tar_visnetwork
+
