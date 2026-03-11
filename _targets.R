@@ -81,8 +81,56 @@ list(
     name = combined_data, #name to reference what you create 
     dplyr::left_join(patients, allergies, by = c("id" = "patient")) #can call a function 
     # format = "qs" # Efficient storage for general data objects.
-  ))
+  ),
+  tar_target(
+    food_rows,
+    combined_data %>%
+      dplyr::filter(category == "food")
+  ),
 
+  tar_target(
+    food_patients,
+    food_rows %>%
+      dplyr::distinct(id) %>%
+      dplyr::mutate(food_allergy = 1)
+  ),
+
+  tar_target(
+    analysis_data,
+    combined_data %>%
+      dplyr::distinct(id, gender, race) %>%
+      dplyr::left_join(food_patients, by = "id") %>%
+      dplyr::mutate(
+        food_allergy = ifelse(is.na(food_allergy), 0, food_allergy),
+        gender = as.factor(gender),
+        race = as.factor(race)
+      )
+  ),
+
+  tar_target(
+    allergy_model_gender,
+    glm(
+      food_allergy ~ gender,
+      data = analysis_data,
+      family = binomial()
+    )
+  ),
+
+  tar_target(
+    allergy_model_gender_race,
+    glm(
+      food_allergy ~ gender + race,
+      data = analysis_data,
+      family = binomial()
+    )
+  )
+)
+
+
+
+
+#> summary(tar_read(allergy_model_gender))
+# summary(tar_read(allergy_model_gender_race))
 
 
 #tar_make()
