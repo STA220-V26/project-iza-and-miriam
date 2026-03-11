@@ -79,9 +79,9 @@ list(
   ),
   tar_target(
     name = combined_data, #name to reference what you create 
-    dplyr::left_join(patients,claim, by="Id")) #can call a function 
+    dplyr::left_join(patients, allergies, by = c("id" = "patient")) #can call a function 
     # format = "qs" # Efficient storage for general data objects.
-  )
+  ))
 
 
 
