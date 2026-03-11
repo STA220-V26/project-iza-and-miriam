@@ -58,6 +58,7 @@ curl::curl_download(
 quiet = FALSE
 )
 }
+
 list(
   # make the zipdata object refer to the data.zip file path
   tar_target(zipdata, "data.zip", format = "file"),
