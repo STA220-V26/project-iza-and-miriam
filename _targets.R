@@ -49,7 +49,23 @@ tar_source()
 # tar_source("other_functions.R") # Source other scripts as needed.
 
 # Replace the target list below with your own:
+
+#downloads the dataset if it dosen't exists yet
+if (!fs::file_exists("data.zip")) {
+curl::curl_download(
+"https://github.com/eribul/cs/raw/refs/heads/main/data.zip",
+"data.zip",
+quiet = FALSE
+)
+}
 list(
+  # make the zipdata object refer to the data.zip file path
+  tar_target(zipdata, "data.zip", format = "file"),
+
+  # TODO: Something related to zip should be added here:
+  # Unzip the downloaded dataset and return the extracted file names
+  tar_target(csv_files, zip::unzip(zipdata)),
+
   tar_target(
     name = data, #name to reference what you create 
     command = tibble(x = rnorm(100), y = rnorm(100)) #can call a function 
