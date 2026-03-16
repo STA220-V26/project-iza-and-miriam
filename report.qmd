@@ -35,6 +35,7 @@ Here we conducted an descriptive analysis on the association between race and fo
 **Analysis and Results: Logistic Regression **
 ```{r}
 library(gtsummary)
+library(broom.helpers)
 model_race <- tar_read(allergy_model_gender_race)
 
 tbl_regression(
