@@ -9,7 +9,7 @@ library(targets)
 
 # Set target options:
 tar_option_set(
-  packages = c("tibble", "dplyr", "ggplot") # Packages that your targets need for their tasks.
+  packages = c("tibble", "dplyr", "ggplot2","tarchetypes") # Packages that your targets need for their tasks.
   # format = "qs", # Optionally set the default storage format. qs is fast. try to use qs format
   #
   # Pipelines that take a long time to run may benefit from
@@ -124,7 +124,24 @@ list(
       family = binomial()
     )
   ),
-  tar_quarto(report, "report.qmd")
+  tar_target(
+  allergy_prop_plot,
+  analysis_data %>%
+    dplyr::group_by(gender) %>%
+    dplyr::summarise(
+      prop_allergy = mean(food_allergy),
+      .groups = "drop"
+    ) %>%
+    ggplot2::ggplot(ggplot2::aes(x = gender, y = prop_allergy, fill = gender)) +
+    ggplot2::geom_col() +
+    ggplot2::labs(
+      title = "Proportion of food allergy by gender",
+      x = "Gender",
+      y = "Proportion with food allergy"
+    ) +
+    ggplot2::theme_minimal()
+)
+  #tar_quarto(report, "report.qmd")
 
 )
 
