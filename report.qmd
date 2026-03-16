@@ -1,13 +1,41 @@
 ---
 title: "Effect of gender on food allergy"
-format: html
+format:  
+  html:
+    code-fold: TRUE
+execute:
+  warning: FALSE
+  message: FALSE
+
 ---
 
 
-
+**Bar plot for the proportion of food allergy for each gender**
 ```{r}
 library(targets)
 print(tar_read(allergy_prop_plot))
 ```
 
+The plot shows that the genders have very similar proportions of food allergy, around 11-12%. 
 
+**Bar plot for the proportion of food allergy for race**
+```{r}
+library(targets)
+print(tar_read(allergy_prop_plot_race))
+```
+
+
+
+**Regression output**
+```{r}
+model_race <- tar_read(allergy_model_gender_race)
+
+tbl_regression(
+  model_race,
+  exponentiate = TRUE
+)
+```
+
+Males have a 0.91 times higher odds of having food allergy compared to females, kepping race constant. 
+
+Race was not significantly associated with food allergy. Compared with Asian participants (reference group), none of the other racial groups showed significantly different odds of food allergy, while holding age constant. 

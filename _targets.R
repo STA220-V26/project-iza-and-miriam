@@ -142,6 +142,23 @@ list(
     ) +
     ggplot2::theme_minimal()
 ),
+ tar_target(
+  allergy_prop_plot_race,
+  analysis_data %>%
+    dplyr::group_by(race) %>%
+    dplyr::summarise(
+      prop_allergy = mean(food_allergy),
+      .groups = "drop"
+    ) %>%
+    ggplot2::ggplot(ggplot2::aes(x = race, y = prop_allergy, fill = race)) +
+    ggplot2::geom_col() +
+    ggplot2::labs(
+      title = "Proportion of food allergy by race",
+      x = "Race",
+      y = "Proportion with food allergy"
+    ) +
+    ggplot2::theme_minimal()
+),
   tar_quarto(report, "report.qmd", quiet = TRUE)
 
 )
