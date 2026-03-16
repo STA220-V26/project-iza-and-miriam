@@ -5,6 +5,7 @@
 
 # Load packages required to define the pipeline:
 library(targets)
+library(tarchetypes)
 # library(tarchetypes) # Load other packages as needed.
 
 # Set target options:
@@ -140,8 +141,8 @@ list(
       y = "Proportion with food allergy"
     ) +
     ggplot2::theme_minimal()
-)
-  #tar_quarto(report, "report.qmd")
+),
+  tar_quarto(report, "report.qmd", quiet = TRUE)
 
 )
 
