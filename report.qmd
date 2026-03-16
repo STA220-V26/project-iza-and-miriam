@@ -10,6 +10,11 @@ execute:
 ---
 
 
+**Research Question**
+Is gender assoicated with the precense of food allergies, when adjusting for race? 
+
+
+
 **Bar plot for the proportion of food allergy for each gender**
 ```{r}
 library(targets)
@@ -24,9 +29,10 @@ library(targets)
 print(tar_read(allergy_prop_plot_race))
 ```
 
+Here we conducted an descriptive analysis on the association between race and food allergy. 
 
 
-**Regression output**
+**Analysis and Results: Logistic Regression **
 ```{r}
 library(gtsummary)
 model_race <- tar_read(allergy_model_gender_race)
@@ -37,6 +43,14 @@ tbl_regression(
 )
 ```
 
-Males have a 0.91 times higher odds of having food allergy compared to females, kepping race constant. 
+**Conclusions**
+
+Gender is not significantly associated with the precense of food allergies, as seen through the logistic regression table below.
+
+The 95% CI is 0.79 to 1.06, which includes 1, and the p-value is 0.2 >0.05. However, if it were significnat, we would interpret it as: Males have a 0.91 times higher odds of having food allergy compared to females, kepping race constant. 
 
 Race was not significantly associated with food allergy. Compared with Asian participants (reference group), none of the other racial groups showed significantly different odds of food allergy, while holding age constant. 
+
+**Reflections on the Project**
+
+It was difficult to adapt to using targets instead of ordinary R scripts, but throughout the project, we got more familiar with it. 
