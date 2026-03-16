@@ -29,6 +29,7 @@ print(tar_read(allergy_prop_plot_race))
 **Regression output**
 ```{r}
 library(gtsummary)
+library(broom.helpers)
 model_race <- tar_read(allergy_model_gender_race)
 
 tbl_regression(
