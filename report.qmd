@@ -1,0 +1,25 @@
+---
+title: "Effect of gender on food allergy"
+subtitle:"names"
+format:
+  revealjs: 
+    theme: blood
+  typst:
+    include-before-body: 
+      -text:
+        //something
+  docx:default
+execute:
+  echo
+
+
+---
+
+'''{r}
+gtsummary::tbl_summary(targets::tar_read(data))
+''
+'''{r}
+gtsummary::tbl_regression(targets::tar_read(model))
+''
+
+Todays date is 'r Sys.Date*()' and it is \r format(Sys.time(), format = "%H")'
