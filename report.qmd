@@ -15,11 +15,11 @@ execute:
 ---
 
 
-**Research Question**
+# **Research Question**
 Is gender assoicated with the precense of food allergies, when adjusting for race? 
 
 
-
+# 
 **Bar plot for the proportion of food allergy for each gender**
 ```{r}
 library(targets)
@@ -51,7 +51,7 @@ tbl_regression(
 
 **Conclusions**
 
-Gender is not significantly associated with the precense of food allergies, as seen through the logistic regression table below.
+Gender is not significantly associated with the precense of food allergies, as seen through the logistic regression table above.
 
 The 95% CI is 0.79 to 1.06, which includes 1, and the p-value is 0.2 >0.05. However, if it were significnat, we would interpret it as: Males have a 0.91 times higher odds of having food allergy compared to females, kepping race constant. 
 
