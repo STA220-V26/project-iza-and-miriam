@@ -18,6 +18,8 @@ execute:
 # **Research Question**
 Is gender assoicated with the precense of food allergies, when adjusting for race? 
 
+ ---------
+
 
 # 
 **Bar plot for the proportion of food allergy for each gender**

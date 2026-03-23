@@ -83,12 +83,13 @@ list(
     dplyr::left_join(patients, allergies, by = c("id" = "patient")) #can call a function 
     # format = "qs" # Efficient storage for general data objects.
   ),
+  #pick out just the food allergies
   tar_target(
     food_rows,
     combined_data %>%
       dplyr::filter(category == "food")
   ),
-
+#pick out those that have a food allergy, which the 1 indicates
   tar_target(
     food_patients,
     food_rows %>%
