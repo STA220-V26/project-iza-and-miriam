@@ -1,6 +1,11 @@
 ---
 title: "Effect of gender on food allergy"
 format:  
+  revealjs: 
+    output-file: slides.html
+    theme: blood
+    transition: fade
+    scrollable: true
   html:
     code-fold: TRUE
 execute:
