@@ -1,0 +1,17 @@
+name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
+data|stem|1f35a31bbbdba55c|87f5902ed953433b|2c530c1562a7fbd1|33550471||t20523.6023241151s|s1743b|1743|rds|local|vector|||0||
+model|stem|dcbc6495860be29e|693e4c90d947b5eb|38f0ef6fdbfedcdf|808688450||t20523.6024666366s|s108b|108|rds|local|vector|||0||
+claims|stem|147a439887667946|4700a8dadb9de9c1|2c530c1562a7fbd1|1985213427||t20523.6229848343s|s77420345b|77420345|rds|local|vector|||15.392||
+zipdata|stem|6da312022b65668f|af7f87c830782109|2c530c1562a7fbd1|-63167595|data.zip|t20523.606521652s|s292920697b|292920697|file|local|vector|||0.02||
+patients|stem|19e95d8ce74ac045|9e1440f054170726|2c530c1562a7fbd1|1057894184||t20528.6368605288s|s580090b|580090|rds|local|vector|||0.27|package ‘dplyr’ was built under R version 4.5.2|
+allergies|stem|8c1e3cfa1fbba6d5|fc1f8afa8646172e|2c530c1562a7fbd1|-1583491602||t20528.6368610822s|s48339b|48339|rds|local|vector|||0.014||
+csv_files|stem|e83a1276e13561d6|ee8c8506388aebb9|baeb2f1360659ba2|966457852||t20528.6369862273s|s44b|44|rds|local|vector|||10.785||
+combined_data|stem|a2a53724c40500dd|6180459caef31841|1b4885515ccb4f29|-773924101||t20528.63698864s|s729128b|729128|rds|local|vector|||0.009||
+food_rows|stem|645741ddd62a4b00|8c24d66aeac57df6|85d1c5663a8eeef3|1392410939||t20528.6369895956s|s108691b|108691|rds|local|vector|||0.005||
+food_patients|stem|7f951d4f08b5535e|4cb5df72db23f11d|f6082d98a58351b3|-1194028076||t20528.6369900331s|s1981b|1981|rds|local|vector|||0.014||
+analysis_data|stem|8d700d7bac5566a7|29042b4faf562de8|ed739af03f8ce7fd|-295434218||t20528.6369913653s|s23080b|23080|rds|local|vector|||0.003||
+allergy_prop_plot|stem|6e75e23e828575f8|03167673d6da77aa|5a43d5bb10b3a989|1179193815||t20528.6369931589s|s254343b|254343|rds|local|vector|||0.051||
+allergy_model_gender|stem|a4d948d1ee46abea|3f17910971280f70|5a43d5bb10b3a989|-953024815||t20528.6369937163s|s91902b|91902|rds|local|vector|||0.015||
+allergy_model_gender_race|stem|01f42e7ab29e96e4|6a119d8fd97acf2c|5a43d5bb10b3a989|-184595527||t20528.6369942303s|s135460b|135460|rds|local|vector|||0.008||
+allergy_prop_plot_race|stem|7e0040643f6f2b42|24dbe727638a3815|5a43d5bb10b3a989|-1035457259||t20528.6369954725s|s254588b|254588|rds|local|vector|||0.018||
+report|stem|ece836d56b4f70e0|04cc5c106d56cb44|db31d68ccab28fb2|787668912|report_files*report.html*slides.html*report.qmd|t20528.6371019695s|s7087776b|7087776|file|local|vector|||9.165||
